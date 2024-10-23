@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- use html tags  
+    I.   article *
+    II.  section *
+    III. nav     *
+    IV.  menu    * 
+    V.   div     *
+    VI.  span    * 
+    VII. video   *
+    VIII.audio   *
+    IX.  object  *
+    X.   embed   *
+    XI.  Iframe  *
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que. 7 HTML Tags Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header, footer {
+            background-color: #f8f9fa;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        section {
+            margin: 20px 0;
+        }
+        iframe, video, object{
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <menu>
+        <button onclick="alert('Save clicked')">Save</button>
+        <button onclick="alert('Load clicked')">Load</button>
+        <button onclick="alert('Print clicked')">Print</button>
+    </menu>
+
+    <main>
+        <article>
+            <h2>Article Title</h2>
+            <p>This is a paragraph of text within an article.</p>
+        </article>
+    </main>
+
+    <div>
+        <p>This is <span><b>span</b></span> tag</p>
+    </div>
+    <section>
+        <h2>Video and Audio</h2>
+        <video width="320" height="240" controls src="https://youtu.be/m4uah2EJ1Qc "></video>
+        <audio controls src="http://commondatastorage.googleapis.com/codeskulptor-assets/week7-bounce.m4a">
+    </section>
+    <section>
+        <h1>This is a embed tag</h1>
+        <embed src="file:///C:/Users/TEMP.WINSR20.000/Desktop/ASSINGMENT%201/ketan%20solanki.pdf" type="application/pdf">
+    </section>
+    <section>
+        <h2>iframe</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/kUMe1FH4CHE?si=k0qtdqJi3C3Vp-ps" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    </section>
+    <section>
+        <h2>Object Element</h2>
+        <object data="Que. 6.html" type="text/html" width="650" height="450"><object>
+    </section>
+
+
+
+</body>
+</html>

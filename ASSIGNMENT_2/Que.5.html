@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q5.apply arithmetic operations</title>
+  </head>
+  <body>
+    <div>
+      <p id="resultElem"></p>
+      <button>Operate</button>
+    </div>
+    <script>
+      let resultElem = document.querySelector("#resultElem");
+      let btnElem = document.querySelector("button");
+
+      let val1; 
+      let val2; 
+      let operator;
+
+      function getResult() {
+        val1 = prompt("Enter the first value : ");
+        val2 = prompt("Enter the second value : ");
+        operator = prompt("Enter the operator : ");
+        let res = eval(val1 + operator + val2);
+        return res;
+      }
+
+      btnElem.addEventListener("click", () => {
+        let result = getResult();
+        resultElem.innerText = `${val1} ${operator} ${val2} = ${result}`;
+      });
+
+    </script>
+  </body>
+</html>

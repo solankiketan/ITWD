@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Que. 6 : 3 Frame Page </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100dvh;
+            max-height: 100dvh;
+        }
+        main{
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 30% 70%;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px dotted rgb(203, 203, 203);
+        }
+        div:nth-child(1){
+            grid-column: span 2;
+            background-color: ghostwhite;
+        }
+        
+    </style>
+    <!--create 2 rows and second row should have a 2 sections and 1st should be 30% of width and 70% of width-->
+</head>
+<body>
+    <main>
+        <div>
+            <a href="https://www.gujaratuniversity.ac.in/" target="_blank">Gujarat University</a>
+        </div>
+        <div>
+            <a href="https://www.youtube.com/" target="_blank">youtube</a>
+        </div>
+        <div>
+            <a href="https://www.w3schools.com/" target="_blank">w3schools</a>
+        </div>
+    </main>
+</body>
+</html>

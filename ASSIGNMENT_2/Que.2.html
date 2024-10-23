@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q2- with internal css</title>
+    <style>
+      div {
+        display: flex;
+        flex-direction: column;
+      }
+
+      p {
+        color: white;
+        background-color: black;
+        font-family: "Courier New", Courier, monospace;
+        padding: 20px;
+      }
+
+      a {
+        text-decoration: line-through;
+        cursor: pointer;
+        margin: 20px 0;
+      }
+
+      img {
+        object-fit: cover;
+        width: 320px;
+        height: 320px;
+        border: 10px solid rgb(210, 210, 210);
+        border-radius: 5px;
+      }
+
+      ul{
+        all: unset;
+        list-style: none;
+        padding: 20px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p >hello world !</p>
+      <a href="https://www.google.co.in/">Google</a>
+      <img
+        src="https://th.bing.com/th?id=OIP.U0SfqHcCr4A3TEW4cIDGOQHaEI&w=334&h=186&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"
+        alt=""
+      />
+      <ul>
+        <li>This is a list item with no styling</li>
+      </ul>
+    </div>
+  </body>
+</html>

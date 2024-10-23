@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q6.Odd or Even ? </title>
+</head>
+<body>
+    <div>
+        <button>Enter value</button>
+    </div>
+    <script>
+        let btn = document.querySelector('button');
+        btn.onclick = ()=>{
+            let value = prompt("Enter value : ");
+            if(+value % 2){
+                alert(value + " is odd number");
+            }else{
+                alert(value + " is even number");
+            }
+        }
+    </script>
+</body>
+</html>

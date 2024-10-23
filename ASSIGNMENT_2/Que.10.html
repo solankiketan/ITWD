@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q10. apply prompt, alert and confirm</title>
+  </head>
+  <body>
+    <p id="print"></p>
+    <button>start</button>
+    <script>
+        let printelm = document.querySelector('#print');
+      document.querySelector("button").addEventListener("click",async () => {
+        if (confirm("Do you wanna to continue")) {
+          let value = prompt("enter the value you want to print in the dom : ");
+          if (value) {
+            printelm.innerText = value;
+          }
+          await sleep(0);
+          if (value) {
+            alert("your value is printed to the dom");
+          } else {
+            alert("You have not provided any value");
+          }
+        }
+      });
+
+      function sleep(ms){
+        return new Promise((res, rej)=>{
+            setTimeout(() => {
+                res('resolved');
+            }, ms);
+        })
+      }
+    </script>
+  </body>
+</html>

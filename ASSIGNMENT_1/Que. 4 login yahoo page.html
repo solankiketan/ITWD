@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Q4- create page using a html css similar to the login.yahoo.com</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        main{
+            min-height: 100dvh;
+            min-width: 100vw;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        section#container{
+            min-width: 320px;
+            max-width: 320px;
+            margin-inline: auto;
+            box-shadow: 0px 0px 5px rgba(0,0,0,.25);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            border-radius: 5px;
+        }
+        section .top{
+            text-align: center;
+            line-height: 1.25;
+        }
+        section .top img{
+            width: 100px;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .full-name, .email, .password, .DOB{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgb(213, 213, 213);
+            padding-bottom: 5px;
+        }
+        .full-name input, .email input, .password input{
+            all: unset;
+            width: 100%;
+            border: 0;
+        }
+        .fnright input{
+            text-align: right;
+        }
+        select{
+            all: unset;
+        }
+        .pass-left{
+            width: 100%;
+        }
+        .pass-right{
+            cursor: pointer;
+            width: 18.4px;
+            padding-right: 30px;
+        }
+        .DOB div{
+            width: 100%;
+        }
+        .DOB div input{
+            all: unset;
+            width: 100%;
+        }
+
+        .privacy-policy{
+            text-align: center;
+        }
+        .privacy-policy p span{
+            color: rgb(0, 154, 205);
+        }
+        .submit{
+            width: 100%;
+        }
+        .submit button{
+            cursor: pointer;
+            width: 100%;
+            height: 50px;
+            border: 0;
+            background-color: #188fff;
+            color: white;
+            border-radius: 25px;
+        }
+        .submit button:hover{
+            background-color: #1c7eda;
+        }
+        .other-options{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+        }
+        .other-options div{
+            display: flex;
+            align-items: center;
+            overlay: hidden;
+            gap: 10px;
+        }
+        .other-options div div{
+            cursor: pointer;
+            width: 100%;
+            height: 50px;
+            border: 1px solid grey;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .other-options div div:hover{
+            border: 1px solid navy;
+        }
+        .other-options div div img{ 
+            height: 45px;
+            object-fit: content;
+            border-radius: 50%;
+        }
+        .privacy-policy p{
+            padding-inline: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <section id="container">
+            <div class="top">
+                <img src="https://s.yimg.com/rz/p/yahoo_frontpage_en-US_s_f_p_bestfit_frontpage_2x.png" alt="yahoo logo">
+                <h2><b>Create a Yahoo account</b></h2>
+                <p>Access all that Yahoo has to offer with a single account. All fields are requiered.</p>
+            </div>
+            <form>
+                <div class="full-name">
+                    <span class="material-symbols-outlined">id_card</span>
+                    <div class="fnleft">
+                        <input type="text" placeholder="First Name" required>
+                    </div>
+                    <div class="fnright">
+                        <input type="text" placeholder="Last Name" required>
+                    </div>
+                </div>
+                <div class="email">
+                    <span class="material-symbols-outlined">mail</span>
+                    <div class="email-left">
+                        <input type="text" placeholder="Email" required>
+                    </div>
+                    <div class="email-right">
+                        <select name="selectmail">
+                            <option value="gmail">@gmail.com</option>
+                            <option value="email">@email.com</option>
+                            <option value="yahoo">@yahoo.com</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="password">
+                    <span class="material-symbols-outlined">password</span>
+                    <div class="pass-left">
+                        <input type="text" placeholder="Password" id="password" required>
+                    </div>
+                    <div class="pass-right">
+                        <span class="material-symbols-outlined" id="toggel">visibility</span>
+                    </div>
+                </div>
+                <div class="DOB">
+                    <span class="material-symbols-outlined">calendar_month</span>
+                    <div class="">
+                        <input type="date" id="date" required> 
+                    </div>
+                </div>
+                <div class="privacy-policy">
+                    <p>By continuing, you agree to our <a href="https://legal.yahoo.com/in/en/yahoo/terms/otos/index.html">Terms</a> and <a href="https://legal.yahoo.com/in/en/yahoo/privacy/index.html">Privacy Policy.</a></p>
+                </div>
+                <div class="submit">
+                    <button type="submit">Next</button>
+                </div>
+                <div class="other-options">
+                    <h5>or create an account with</h5>
+                    <div>
+                        <div>
+                            <img src="data:image/jpeg;base64,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" alt="google logo">
+                        </div>
+                        <div>
+                            <span class="material-symbols-outlined">mail</span>
+                            <h5>My Email</h5>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <h5>already have an account ? <span style="color: blue">Sign In</span></h5>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        var toggel_pass_elem = document.querySelector('#toggel');
+        var pass_elem = document.querySelector('#password');
+
+        var isHide = true;
+        toggel_pass_elem.addEventListener('click',(e)=>{
+            if(isHide){
+                pass_elem.type = "text";
+                toggel_pass_elem.innerText = "visibility_off";
+            }else{
+                pass_elem.type = "password";
+                toggel_pass_elem.innerText = "visibility";
+             } 
+
+            isHide = !isHide;
+        })
+    </script>
+</body>
+</html>

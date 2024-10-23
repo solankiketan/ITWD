@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8. using for loop print multiplication table</title>
+    <style>
+        p{
+            all: unset;
+            padding: 5px 0px;
+        }
+        #table{
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            background-color: black;
+            border-radius: 5px;
+            gap: 2px;
+            width: fit-content;
+        }
+        #table > div{
+            background-color: white;
+            padding: 5px;
+        }
+        button{
+            all: unset;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            margin: 10px 0px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Table</p>
+        <div id="table"></div>
+        <button>Print Table</button>
+    </div>
+    <script>
+        let btn = document.querySelector('button');4
+        let tableElem = document.querySelector('#table');
+
+        function printtable(num){
+            console.log(num, typeof num);
+            tableElem.innerHTML = "";
+            for(let i = 1; i <= 10; i++){
+                let row = document.createElement("div");
+                let text = `${num} * ${i} = ${num * i}`;
+                row.innerText = text;
+                tableElem.appendChild(row);
+            }
+        }
+        btn.onclick = ()=>{
+            let value = prompt("Enter the number you wanna print multiplication table : ");
+            printtable(+value);
+        }
+        btn.click();
+    </script>
+</body>
+</html>
