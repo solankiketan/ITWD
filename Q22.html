@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q22</title>
+</head>
+<body>
+    <div>
+        <form >
+            <label for="str">Enter text</label>
+            <br>
+            <input type="text" id="str" placeholder="Enter the string ">
+            <br>
+            <br>
+            <label for="char">Enter character to find occurance</label>
+            <br>
+            <input type="text" id="char" maxlength="1" placeholder="Enter the character">
+            <br>
+            <p id="res"></p>
+        </form>
+    </div>
+
+    <script>
+        let str = document.querySelector('#str');
+        let char = document.querySelector('#char');
+        let res = document.querySelector('#res');
+
+        function showres(){
+            let string = str.value;
+            let charcter = char.value;
+            if(!string || !charcter) return;
+            let count = 0;
+            for(let i = 0; i< string.length; i++){
+                if(string[i] == charcter) count++;
+            }
+            res.innerHTML = `string  ${string} <br>character : ${charcter} <br> count : ${count}`
+        }
+
+        str.addEventListener("keyup",(e)=>{
+            showres();
+        });
+        char.addEventListener('keyup', (e)=>{
+            showres();
+        })
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q23</title>
+  </head>
+  <body>
+    <div>
+      <label for="input">Enter the email to validate</label>
+      <input type="text" id="input" />
+      <p id="res"></p>
+    </div>
+
+    <script>
+      let input = document.querySelector("input");
+      let res = document.querySelector("p");
+      let emailreg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z.-]+\.[a-zA-Z]{2,}$/;
+
+        input.addEventListener("change",(e)=>{
+            let email = e.target.value;
+            if(!email) return;
+            let result = emailreg.test(email)
+            if(result){
+                res.innerText = `${email} is valid email`
+                res.style.color = "green"
+            }else{
+                res.innerText = `${email} is not a valid email`
+                res.style.color = "brown"
+            }
+        })
+
+    </script>
+  </body>
+</html>

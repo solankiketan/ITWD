@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        input, button{
+            height: 35px;
+        }
+    </style>
+</head>
+<body >
+    <div class="container">
+        <label for="input">Enter the numbers</label>
+        <input type="number" id="input" placeholder="Enter the numbers">
+        <button id="add">Add</button>
+        <button id="reset">reset</button>
+        <p id="output"></p>
+    </div>
+
+    <script>
+        let values = []
+        let input = document.querySelector('input');
+        let output = document.querySelector('#output');
+        let btn = document.querySelector('#add');
+        let resetbtn = document.querySelector('#reset');
+        resetbtn.addEventListener("click", ()=>{
+            values = [];
+            output.innerHTML = ""
+        })
+        function getMinMax(values){
+            let min = values[0], max = values[0];
+            for(let i = 0; i < values.length; i++){
+                if(values[i] < min) min = values[i];
+                if(values[i] > max) max = values[i];
+            }
+            return [min, max];
+        }
+        input.addEventListener('keyup', (e)=>{
+            if(e.key == "Enter") btn.click();
+        })
+        btn.addEventListener("click", (e)=>{
+            if(!input.value) return alert("please add number");
+            if(typeof Number(input.value) !== Number && isNaN(Number(input.value))) return alert("please add number");
+            values.push(Number(input.value));
+            input.value = ''
+            let [min, max] = getMinMax(values);
+            output.innerHTML = "min value : " + min + "<br>" + "max value :" + max;
+        });
+
+    </script>
+</body>
+</html>

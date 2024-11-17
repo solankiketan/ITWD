@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q5</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <label for="marks">Enter marks</label>
+            <div>
+                <input type="number" id="marks">
+                <input type="number" id="marks">
+                <input type="number" id="marks">
+            </div>
+            <button id="btn">Get Status</button>
+            <p id="res"></p>
+        </div>
+    </div>
+
+    <script>
+        let inputs = document.querySelectorAll('input');
+        let btn = document.querySelector('#btn');
+        let res = document.querySelector('#res');
+        btn.addEventListener('click', ()=>{
+            let inp1 = Number(inputs[0].value);
+            let inp2 = Number(inputs[1].value);
+            let inp3 = Number(inputs[2].value);
+            if(!inp1 ||  !inp2 || !inp3) return;
+            let total = inp1 + inp2 + inp3;
+            if(total <= 50) res.innerText = "Failed better luck next time";
+            else if(total <= 100) res.innerText = "Cracked it";
+            else res.innerText = "First class";
+        })
+</script>
+</body>
+</html>

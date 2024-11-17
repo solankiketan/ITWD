@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q17</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .container{
+            height: 100dvh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        form{
+            margin-inline: auto;
+            padding: 20px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: rgb(233, 233, 233);
+        }
+        form > div{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        input, button{
+            all: unset;
+            height: 35px;
+            background-color: white;
+            padding: 0px 10px;
+        }
+        button{
+            background-color: green;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div>
+          <label for="firstname">First Name</label>
+          <input type="text" placeholder="Enter first name" id="firstname" />
+        </div>
+        <div>
+          <label for="lastname">Last Name</label>
+          <input type="text" id="lastname" placeholder="Enter last name" />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Password" />
+        </div>
+        <div>
+          <label for="confirmpassword">Confirm Password</label>
+          <input type="password" id="confirmpassword" placeholder="Confirm Password" />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="texts" id="email" placeholder="Email" />
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+        let form = document.querySelector('form');
+        let inputs = document.querySelectorAll('input');
+        let btn = document.querySelector('button');
+
+        let emailreg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z.-]+\.[a-zA-Z]{2,}$/;
+        let passReg = /^^[a-zA-Z#@-_]{8,16}$/
+        
+        function checkvalid(){
+            inputs.forEach((item, i)=>{
+                let id = item.id;
+                if(!item.value) return alert(`${id} field is neccessary`);
+                if(id == 'fistname'){
+                    if(item.value.length < 4) return alert("first name must be longer than the 3 characters");
+                }else if(id == 'lastname'){
+                    if(item.value.length < 4) return alert("last name must be longer than the 3 characters");
+                }else if(id == 'email'){
+                    let testRes = emailreg.test(item.value);
+                    if(!testRes){
+                        return alert("Email does not have valid format");
+                    }else{
+                        console.log("email is correct ");
+                    }
+                }else if(id == 'password'){
+                    console.log(inputs[i+1].value, item.value);
+                    if(item.value != inputs[i + 1].value){
+                        return alert("password and confirm password must be same");
+                    }
+                    let res = passReg.test(item.value);
+                    if(!res){
+                        alert("password does not match the proper format");
+                    }else{
+                       console.log("password matches format") 
+                    }
+                } 
+                btn.innerText = "submitted";
+                btn.style.backgroundColor = "black"
+                btn.style.color = "white"
+            })
+        }
+        
+        form.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            checkvalid();
+        })
+
+    </script>
+  </body>
+</html>

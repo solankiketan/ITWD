@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q14</title>
+    <style>
+      input {
+        display: block;
+      }
+      input[type="radio"] {
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="number" placeholder="width" id="input" />
+      <input type="number" placeholder="height" id="input" />
+      <input type="number" placeholder="depth" id="input" />
+      <br />
+      <input type="radio" name="option" checked id="radio1" value="cube" />
+      <label for="radio1">Cube</label>
+      <input type="radio" name="option" id="radio2" value="sqr" />
+      <label for="radio2">Square</label>
+      <br />
+      <h id="res"></h>
+    </div>
+
+    <script>
+      let inputs = document.querySelectorAll("#input");
+      let radioInps = document.getElementsByName("option");
+      let res = document.querySelector("#res");
+      let task = "cube";
+
+      function showres() {
+        if (task == "sqr") {
+          res.innerHTML = `sqr is : ${
+            Number(inputs[0].value) * Number(inputs[1].value)
+          }`;
+        } else {
+          res.innerHTML = `cube is : ${
+            Number(inputs[0].value) *
+            Number(inputs[1].value * Number(inputs[2].value))
+          }`;
+        }
+      }
+
+      radioInps.forEach((elem) => {
+        elem.addEventListener("change", (e) => {
+          task = e.target.value;
+          if (task == "sqr") {
+            inputs[2].style.display = "none";
+          } else {
+            inputs[2].style.display = "inline";
+          }
+          showres();
+        });
+      });
+
+      inputs.forEach((element) => {
+        element.addEventListener("keyup", () => {
+          if (task == "cube") {
+            if (!inputs[0].value || !inputs[1].value || !inputs[2].value)
+              return;
+          } else {
+            if (!inputs[0].value || !inputs[1].value) return;
+          }
+          showres();
+        });
+      });
+    </script>
+  </body>
+</html>

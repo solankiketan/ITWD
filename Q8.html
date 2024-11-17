@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8</title>
+</head>
+<body>
+    <div class="container">
+        <input type="number" placeholder="Enter the number ">
+        <div id="table"></div>
+    </div>
+
+    <script>
+        let input = document.querySelector('input');
+        let table = document.querySelector('#table');
+        input.addEventListener("keyup", ()=>{
+            let number = Number(input.value);
+            let res = '';
+            for(let i = 1; i < 11; i++){
+                res += `<span>${number} * ${i} = ${number * i}</span><br>`
+            }
+            table.innerHTML = res;
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q25</title>
+    <style>
+        body{
+            padding: 0px 40px;
+        }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p id="res"></p>
+    </div>
+
+    <script>
+      let res = document.querySelector("p");
+      let pattern = "";
+
+      //pattern one
+      pattern = "Pattern One<br><br>"
+      for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= 5; j++) {
+            pattern += "*&nbsp&nbsp";
+        }
+        pattern += "<br>";
+      }
+      pattern += "<br><br>";
+      res.innerHTML += pattern;
+
+      //Pattern Two
+      pattern = "Pattern Two<br><br>"
+      for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= i; j++) {
+            pattern += "*&nbsp&nbsp";
+        }
+        pattern += "<br>";
+      }
+      pattern += "<br><br>";
+      res.innerHTML += pattern;
+
+      //Pattern Three
+      pattern = "Pattern Three<br><br>"
+      for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+            if(i == 0 || i == 4 || j == 0 || j == 4){
+                pattern += "*&nbsp&nbsp";
+            }else{
+                pattern += "&nbsp&nbsp&nbsp&nbsp";
+            }
+        }
+        pattern += "<br>";
+      }
+      pattern += "<br><br>";
+      res.innerHTML += pattern;
+    </script>
+  </body>
+</html>
