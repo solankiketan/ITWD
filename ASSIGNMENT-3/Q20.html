@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q20</title>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <input type="text">
+            <button id="upr">To UpperCase</button>
+            <button id="lwr">To lowerCase</button>
+        </div>
+    </div>    
+
+    <script>
+        let uprBtn = document.querySelector('#upr');
+        let lwrBtn = document.querySelector('#lwr');
+        let input = document.querySelector('input');
+
+        uprBtn.addEventListener("click", ()=>{
+            input.value = input.value.toUpperCase();
+        })
+        lwrBtn.addEventListener("click", ()=>{
+            input.value = input.value.toLowerCase();
+        })
+    </script>
+</body>
+</html>

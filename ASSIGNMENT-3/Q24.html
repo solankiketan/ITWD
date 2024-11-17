@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q24</title>
+    <style>
+      p {
+        max-width: 100dvh;
+        word-break: break-all;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+        <label for="slt">choose pattern</label>
+        <br>
+      <select id="slt">
+        <option selected value="1122">11,22,33...</option>
+        <option value="249">2,4,8,16...</option>
+      </select>
+      <br>
+      <input type="number" placeholder="Enter the number" />
+      <p id="res"></p>
+    </div>
+
+    <script>
+      let input = document.querySelector("input");
+      let res = document.querySelector("#res");
+      let select = document.querySelector("select");
+      let dbtime = 1000;
+      let dbtimeout;
+
+      let task = select.value;
+
+      select.addEventListener("change", (e) => {
+        task = e.target.value;
+        handleKeyup();
+      });
+
+      function printOne(number) {
+        let result = "";
+        for (let i = 11; i < number; i += 11) {
+          result += `${i}, `;
+        }
+        res.innerHTML = result;
+      }
+      function printTwo(number){
+        let result = "";
+        for (let i = 11; i < number; i++) {
+          result += `${i * 1}, `;
+        }
+        res.innerHTML = result;
+      }
+
+      function handleKeyup(e){
+        if (dbtimeout) {
+          clearTimeout(dbtimeout);
+        }
+        dbtimeout = setTimeout(() => {
+          let number = +input.value;
+          if (isNaN(number) || !number) return;
+          if(task == '1122'){
+            printOne(number)
+          }else{
+            printTwo(number);
+          }
+        }, dbtime);
+      }
+
+      input.addEventListener("keyup", handleKeyup);
+    </script>
+  </body>
+</html>

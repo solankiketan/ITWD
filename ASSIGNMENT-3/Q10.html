@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q10</title>
+</head>
+<body>
+    <div>
+        <input type="number" placeholder="Enter Number">
+        <p id="res"></p>
+    </div>
+
+    <script>
+        let input = document.querySelector('input');
+        let res = document.querySelector('#res');
+
+        function factorial(val){
+            if(val > 170) return alert("Enter value below 170")
+            if(val == 1) return val;
+            return val * factorial(val -1); 
+        }
+        input.addEventListener('keyup', (e)=>{
+            let value = Number(e.target.value);
+            let fact = factorial(value);
+            res.innerHTML = `Factorail of the ${value} is ${fact}`;
+        })
+    </script>
+</body>
+</html>

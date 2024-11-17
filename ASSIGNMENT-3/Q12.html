@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q12</title>
+</head>
+<body>
+    <h1 id="status"></h1>
+
+    <script>
+        let status = document.querySelector('h1');
+        let hour = new Date().getHours();
+        if(hour >= 21 || (hour <= 4 && hour > 0)){
+            status.innerText = "It's a sleep time ! Good Night"
+        }else if(hour > 4 && hour <= 11){
+            status.innerText = "Good Morning !"
+        }else if(hour > 11 && hour <= 16){
+            status.innerText = "Good Afternoon!"
+        }else{
+            status.innerText = "Good Evening!"
+        }
+    </script>
+</body>
+</html>

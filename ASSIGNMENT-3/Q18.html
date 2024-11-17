@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que. 18</title>
+</head>
+<body>
+    <script>
+        let input;
+        do{
+            input = +prompt("Enter number to get the root and square root");
+            if(!input || isNaN(input)) continue;
+            document.write(`Square of the ${input} = ${(input * input).toFixed(3)}<br>Square Root of the ${input} = ${Math.sqrt(input).toFixed(3)}`)
+        }while(!input || isNaN(input));
+    </script>
+</body>
+</html>
